@@ -139,12 +139,13 @@ Concepts: Deployments, ReplicaSets, Services, Namespaces, Helm charts,
 resource limits/requests, self-healing, metrics-server.
 
 ### AWS Cloud Infrastructure
-**[`cloud-engineer-portfolio/vpc-ec2/`](cloud-engineer-portfolio/vpc-ec2/)**
+**Repo: [jlin80/cloud-engineer-portfolio](https://github.com/jlin80/cloud-engineer-portfolio)** → [`vpc-ec2/`](https://github.com/jlin80/cloud-engineer-portfolio/tree/main/vpc-ec2)
 
 Full AWS networking stack deployed with Terraform on Free Tier:
 VPC, public + private subnets, Internet Gateway, Security Groups, EC2 t2.micro.
 
 ```bash
+git clone https://github.com/jlin80/cloud-engineer-portfolio.git
 cd cloud-engineer-portfolio/vpc-ec2/
 terraform init && terraform apply
 terraform destroy   # when done, avoids charges
