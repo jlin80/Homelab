@@ -8,6 +8,9 @@
 ![CI](https://github.com/jlin80/homelab/actions/workflows/terraform.yml/badge.svg)
 ![Deploy](https://github.com/jlin80/homelab/actions/workflows/deploy.yml/badge.svg)
 
+**A production-style homelab I designed, built, and operate end to end** — to
+practice cloud engineering on real hardware, not in a tutorial sandbox.
+
 A 2-node bare-metal **Proxmox VE 9** cluster running self-hosted services in
 LXC containers, provisioned declaratively with **Terraform** — extended with
 Kubernetes (k3s), GitHub Actions CI/CD, full-stack observability (metrics + logs + alerts),
@@ -19,6 +22,9 @@ by a single `terraform apply`.
 
 > Network addresses in this repo use the example subnet `192.168.1.0/24`.
 > Set your own values in `terraform.tfvars` / `variables.tf`.
+
+> 💼 **Open to Cloud / DevOps Engineer roles** — remote or Costa Rica.
+> [LinkedIn](https://www.linkedin.com/in/jin-lin-ec21) · jin.lin.h18@gmail.com
 
 ## Architecture
 
@@ -216,3 +222,32 @@ state without recreating them, use `terraform import` per resource, e.g.:
 ```bash
 terraform import 'proxmox_virtual_environment_container.ct["pihole"]' pve/100
 ```
+
+## Engineering Challenges & What I Learned
+
+- **Zero-downtime adoption of live infrastructure into IaC.** The cluster grew
+  by hand before I wrote Terraform. Instead of tearing it down, I used
+  `terraform import` to bring every running container under state management —
+  no rebuild, no downtime (see [Notes](#notes)).
+- **Making a containerized CI/CD runner deploy other containers.** Wiring the
+  self-hosted GitHub Actions runner to reach both the Docker socket and the k3s
+  kubeconfig was the tricky part — debugging socket permissions and the kube
+  context is what turned every `git push` into a live deploy.
+- **Observability as three pillars, not just pretty graphs.** Metrics
+  (Prometheus), uptime (Blackbox Exporter), and logs (Loki) each answer a
+  different question. I learned to alert on user-facing symptoms (`ProbeDown`)
+  rather than on raw resource numbers.
+- **Closing the alerting loop end to end.** I tested the full lifecycle —
+  alerts firing to Telegram on downtime, high CPU/RAM, and pod failures, then
+  auto-resolving once the condition clears. An alert you've never watched fire
+  is an alert you can't trust.
+
+## Contact
+
+Built and maintained by **Jin Heng Lin Huang** — moving from Network Operations
+into Cloud / DevOps engineering. Open to opportunities, remote or in Costa Rica.
+
+- 💼 [LinkedIn](https://www.linkedin.com/in/jin-lin-ec21)
+- 🐙 [GitHub](https://github.com/jlin80)
+- 🌐 [Portfolio](https://jlin80.github.io)
+- 📧 jin.lin.h18@gmail.com
