@@ -8,13 +8,20 @@
 ![CI](https://github.com/jlin80/homelab/actions/workflows/terraform.yml/badge.svg)
 ![Deploy](https://github.com/jlin80/homelab/actions/workflows/deploy.yml/badge.svg)
 
+<<<<<<< HEAD
 **A production-style homelab I designed, built, and operate end to end** — to
 practice cloud engineering on real hardware, not in a tutorial sandbox.
+=======
+## Overview
+
+A production-style homelab I built to learn cloud engineering hands-on — not by
+following tutorials, but by running the real thing on my own hardware.
+>>>>>>> 9082383e7c21ac1a1cf130207d1d5c878b0a97f1
 
 A 2-node bare-metal **Proxmox VE 9** cluster running self-hosted services in
 LXC containers, provisioned declaratively with **Terraform** — extended with
-Kubernetes (k3s), GitHub Actions CI/CD, full-stack observability (metrics + logs + alerts),
-and cloud infrastructure on AWS.
+Kubernetes (k3s), GitHub Actions CI/CD, full-stack observability (metrics + logs
++ alerts), and cloud infrastructure on AWS.
 
 This repository is the source of truth for the container fleet: adding a service
 is a few lines in [`terraform/containers.tf`](terraform/containers.tf) followed
@@ -23,7 +30,11 @@ by a single `terraform apply`.
 > Network addresses in this repo use the example subnet `192.168.1.0/24`.
 > Set your own values in `terraform.tfvars` / `variables.tf`.
 
+<<<<<<< HEAD
 > 💼 **Open to Cloud / DevOps Engineer roles** — remote or Costa Rica.
+=======
+> 💼 Open to **Cloud / DevOps Engineer** roles (remote or Costa Rica) —
+>>>>>>> 9082383e7c21ac1a1cf130207d1d5c878b0a97f1
 > [LinkedIn](https://www.linkedin.com/in/jin-lin-ec21) · jin.lin.h18@gmail.com
 
 ## Architecture
@@ -179,6 +190,29 @@ docker compose up -d
 
 **Grafana dashboards:** `1860` (Node Exporter), `7587` (Blackbox), `13332` (Kube State Metrics), `15760` (Kubernetes Global)
 
+## Engineering Challenges & What I Learned
+
+- **Adopting live infrastructure into Terraform with zero downtime.** I had
+  containers already running before writing IaC. Instead of recreating them, I
+  used `terraform import` to bring existing resources under state management —
+  no rebuild, no service interruption.
+
+- **Wiring a self-hosted CI/CD runner into Docker and Kubernetes.** Getting the
+  GitHub Actions runner (itself a container) to deploy other containers meant
+  mounting the Docker socket and a kubeconfig into it. Debugging the socket
+  permissions and kube context was the trickiest part — now every push to
+  `main` runs `docker compose up` and `kubectl apply` automatically.
+
+- **Building observability as three pillars, not just graphs.** Started with
+  Prometheus + Grafana (metrics), added Blackbox Exporter for real uptime
+  probing, then Loki + Promtail for centralized logs. Learned why alerting on
+  symptoms (ProbeDown) beats alerting on raw resource numbers.
+
+- **Closing the alerting loop end to end.** Configured Alertmanager to route to
+  Telegram and tested the full lifecycle — firing on service downtime / high
+  CPU / pod failures, and confirming auto-resolution when the condition clears.
+  An alert you haven't watched fire is an alert you don't trust.
+
 ## Usage
 
 ```bash
@@ -223,6 +257,7 @@ state without recreating them, use `terraform import` per resource, e.g.:
 terraform import 'proxmox_virtual_environment_container.ct["pihole"]' pve/100
 ```
 
+<<<<<<< HEAD
 ## Engineering Challenges & What I Learned
 
 - **Zero-downtime adoption of live infrastructure into IaC.** The cluster grew
@@ -246,6 +281,11 @@ terraform import 'proxmox_virtual_environment_container.ct["pihole"]' pve/100
 
 Built and maintained by **Jin Heng Lin Huang** — moving from Network Operations
 into Cloud / DevOps engineering. Open to opportunities, remote or in Costa Rica.
+=======
+## Contact
+
+Built and maintained by **Jin Heng Lin Huang** — Network Operations Specialist
+>>>>>>> 9082383e7c21ac1a1cf130207d1d5c878b0a97f1
 
 - 💼 [LinkedIn](https://www.linkedin.com/in/jin-lin-ec21)
 - 🐙 [GitHub](https://github.com/jlin80)
