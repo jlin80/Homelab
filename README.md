@@ -29,10 +29,10 @@ by a single `terraform apply`.
 ## Architecture
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                         GitHub                               │
-│              push to main → triggers CI/CD pipeline          │
-└──────────────────────┬──────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────┐
+│                           GitHub                           │
+│           push to main → triggers CI/CD pipeline           │
+└──────────────────────┬─────────────────────────────────────┘
                        │ GitHub Actions (self-hosted runner)
                        ▼
              docker compose up + kubectl apply
