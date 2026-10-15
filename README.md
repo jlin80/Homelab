@@ -1,39 +1,39 @@
-# Homelab — Virtualización, servicios self-hosted y automatización
+# Homelab — Virtualization, Self-Hosted Services, and Automation
 
 ![Proxmox](https://img.shields.io/badge/Virtualization-Proxmox%20VE-E57000?logo=proxmox)
 ![Linux](https://img.shields.io/badge/Systems-Linux-FCC624?logo=linux&logoColor=black)
 ![Containers](https://img.shields.io/badge/Containers-Self--hosted-2496ED?logo=docker&logoColor=white)
 ![Git](https://img.shields.io/badge/Version%20Control-Git-F05032?logo=git&logoColor=white)
 
-Proyecto personal de laboratorio enfocado en **administración de sistemas, virtualización, servicios self-hosted, gestión de código y automatización**. Es un entorno práctico para desarrollar habilidades de operación, mantenimiento y resolución de problemas.
+A personal lab focused on **systems administration, virtualization, self-hosted services, version control, and automation**. It provides a practical environment for developing skills in operations, maintenance, and troubleshooting.
 
-La infraestructura se mantiene intencionalmente privada. Este repositorio presenta el alcance técnico general del proyecto, no un inventario operativo ni instrucciones para acceder a los sistemas.
+The infrastructure is intentionally kept private. This repository presents the project's general technical scope rather than an operational inventory or instructions for accessing the systems.
 
-## Áreas técnicas
+## Technical Areas
 
-- **Virtualización y sistemas:** administración de un entorno basado en Proxmox VE y sistemas Linux.
-- **Contenedores y servicios:** despliegue y mantenimiento de aplicaciones self-hosted en entornos contenerizados.
-- **Gestión de código:** uso de Git y plataformas de alojamiento de repositorios para versionar proyectos y cambios.
-- **Automatización:** mejora de tareas operativas y flujos de trabajo.
-- **Agentes y herramientas de IA:** experimentación con agentes especializados para apoyar tareas de investigación, desarrollo y operaciones.
-- **Operaciones y troubleshooting:** diagnóstico de fallos, mantenimiento y revisión de cambios con atención a la seguridad.
+- **Virtualization and systems:** Administration of a Proxmox VE environment and Linux systems.
+- **Containers and services:** Deployment and maintenance of self-hosted applications in containerized environments.
+- **Version control:** Use of Git and repository hosting platforms to track projects and changes.
+- **Automation:** Improving operational tasks and workflows.
+- **AI agents and tools:** Experimenting with specialized agents to support research, development, and operations.
+- **Operations and troubleshooting:** Diagnosing failures, maintaining services, and reviewing changes with security in mind.
 
-## Objetivos del proyecto
+## Project Goals
 
-1. Consolidar prácticas de administración de sistemas y servicios privados.
-2. Mejorar la organización, trazabilidad y mantenibilidad de los proyectos.
-3. Automatizar tareas repetitivas cuando sea apropiado.
-4. Aplicar principios de mínimo privilegio y manejo seguro de credenciales.
-5. Documentar las decisiones técnicas sin exponer detalles internos de la red.
+1. Strengthen practical systems administration and private-service operations skills.
+2. Improve project organization, traceability, and maintainability.
+3. Automate repetitive tasks where appropriate.
+4. Apply least-privilege principles and secure credential handling.
+5. Document technical decisions without exposing internal network details.
 
-## Tecnologías y herramientas
+## Technologies and Tools
 
-**Proxmox VE · Linux · contenedores · Git · Forgejo · servicios self-hosted · automatización**
+**Proxmox VE · Linux · Containers · Git · Forgejo · Self-Hosted Services · Automation**
 
-La lista resume las áreas y herramientas relevantes del proyecto; no implica que cada componente esté activo simultáneamente en la infraestructura actual.
+This list summarizes relevant tools and areas explored in the project; it does not imply that every component is currently running in the environment.
 
-## Seguridad y alcance público
+## Security and Public Scope
 
-Por seguridad, este repositorio no publica direcciones IP privadas, nombres internos de hosts, identificadores de contenedores, endpoints administrativos, inventarios completos, capturas de paneles internos ni configuraciones operativas específicas. Los ejemplos públicos deben ser genéricos y no contener credenciales, tokens, claves privadas ni datos de acceso.
+For security reasons, this repository does not publish private IP addresses, internal hostnames, container IDs, administrative endpoints, full infrastructure inventories, internal dashboard screenshots, or detailed operational configurations. Public examples should remain generic and must not include credentials, tokens, private keys, or access details.
 
-Este proyecto es un laboratorio personal en evolución, no una declaración de disponibilidad ni un servicio público de producción.
+This is an evolving personal lab, not a claim of production-service availability or a public-facing service.
