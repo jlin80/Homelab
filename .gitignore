@@ -1,33 +1,27 @@
-# --- Terraform ---
-# Local .terraform directories
-**/.terraform/*
+# Environment files and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+kubeconfig
+kubeconfig.*
+secrets.*
+secrets/
 
-# State files (may contain secrets) — never commit
-*.tfstate
-*.tfstate.*
-
-# Crash log files
-crash.log
-crash.*.log
-
-# Variable files with real secrets (keep the .example committed)
-*.tfvars
-*.tfvars.json
-!*.tfvars.example
-
-# CLI configuration / credentials
-.terraformrc
-terraform.rc
-
-# Lock file is intentionally committed (.terraform.lock.hcl)
-
-# --- Docker / monitoring ---
-# Real secrets for the monitoring stack (keep the .env.example committed)
-monitoring/.env
-
-# --- Editor / OS ---
-.vscode/
-.idea/
+# Local state and runtime artifacts
+*.log
+*.pid
 *.swp
+*.bak
+*.backup
 .DS_Store
 Thumbs.db
+
+# Editor settings
+.vscode/
+.idea/
