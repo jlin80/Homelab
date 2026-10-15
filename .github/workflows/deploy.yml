@@ -1,8 +1,8 @@
 name: Homelab Deploy
 
+# Manual-only while legacy deployment paths and targets are being reconciled.
+# Review this workflow before running it against the current infrastructure.
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 jobs:
